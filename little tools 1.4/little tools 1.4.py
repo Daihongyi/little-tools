@@ -57,7 +57,7 @@ def tools_encipher(text, secret_key):
         text_return = text_return + i
     origin_time = time.localtime()
     now_time = time.strftime("%Y%m%d%H%M%S", origin_time)
-    with open("little tools" + now_time + "加密结果", encoding="gbk", mode="w")as f:
+    with open("little tools" + now_time + "加密结果.txt", encoding="gbk", mode="w")as f:
         f.write(text_return)
     return text_return
 
@@ -86,7 +86,7 @@ def tools_decrypt(encipher_text, secret_key):
         text_return = text_return + i
     origin_time = time.localtime()
     now_time = time.strftime("%Y%m%d%H%M%S", origin_time)
-    with open("little tools" + now_time + "解密结果", encoding="gbk", mode="w")as f:
+    with open("little tools" + now_time + "解密结果.txt", encoding="gbk", mode="w")as f:
         f.write(text_return)
     return text_return
 
