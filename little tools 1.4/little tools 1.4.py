@@ -163,7 +163,7 @@ def tools_mp3_player():
     
 
         
-    
+
 
 
 def main():
@@ -246,7 +246,7 @@ def main():
     button_exit = tk.Button(main_window, text="退出", command=handle_exit)
     button_exit.place(x=550,y=350)
 
-    about1 = tk.Label(main_window,text="本产品由北极星工作室荣誉出品",fg="blue")
+    about1 = tk.Label(main_window,text="本产品由DHY荣誉出品",fg="blue")
     about2 = tk.Label(main_window,text="源码请访问 https://github.com/Daihongyi/little-tools")
     about3 = tk.Label(main_window,text="邮箱：17717460527@163.com",fg="orange")
     about4 = tk.Label(main_window,text="在使用此版本之前，请先阅读位于GitHub上的新版隐私政策",fg="red")
