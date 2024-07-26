@@ -193,13 +193,13 @@ def main():
         messagebox.showwarning("警告","加密完成后可能会出现不显示的情况，这是由于功能本身算法的局限性造成的，请不要惊慌")
         messagebox.showwarning("警告","加密完成后可能会出现结果乱码的情况，这是由于功能本身的原理造成的，说明加密成功，请不要惊慌")
         text = simpledialog.askstring("输入", "请输入文本：", parent=main_window)
-        secret_key = simpledialog.askstring("输入", "请输入密钥：", parent=main_window)
+        secret_key = simpledialog.askstring("输入", "请输入密钥：密钥长度请与文本长度相同：", parent=main_window)
         encipher_text = tools_encipher(text, secret_key)
         messagebox.showinfo("加密结果", "加密后的文本: " + encipher_text)
 
     def handle_decrypt():
         encipher_text = simpledialog.askstring("输入", "请输入加密文本：", parent=main_window)
-        secret_key = simpledialog.askstring("输入", "请输入密钥：", parent=main_window)
+        secret_key = simpledialog.askstring("输入", "请输入密钥：密钥长度请与文本长度相同", parent=main_window)
         decrypted_text = tools_decrypt(encipher_text, secret_key)
         messagebox.showinfo("解密结果", "解密后的文本: " + decrypted_text)
 
