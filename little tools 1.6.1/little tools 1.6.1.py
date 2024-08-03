@@ -317,10 +317,10 @@ def main():
     def handle_exit():
         main_window.destroy()
 
-    button_randint = tk.Button(main_window, text="生成随机数", command=handle_random_numbers)
+    button_randint = tk.Button(main_window, text="随机数生成", command=handle_random_numbers)
     button_randint.place(x=25,y=25)
 
-    button_prime_number = tk.Button(main_window, text="检测质数", command=handle_prime_number)
+    button_prime_number = tk.Button(main_window, text="质数判断", command=handle_prime_number)
     button_prime_number.place(x=100,y=25)
 
     button_encipher = tk.Button(main_window, text="加密文本", command=handle_encipher)
@@ -329,7 +329,7 @@ def main():
     button_decrypt = tk.Button(main_window, text="解密文本", command=handle_decrypt)
     button_decrypt.place(x=100,y=75)
 
-    button_time = tk.Button(main_window, text="时间", command=handle_now_time)
+    button_time = tk.Button(main_window, text="查看时间", command=handle_now_time)
     button_time.place(x=175, y=25)
 
     button_mp3_player = tk.Button(main_window, text="mp3播放", command=tools_mp3_player)
