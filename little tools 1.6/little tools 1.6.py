@@ -180,7 +180,7 @@ def main():
 
     main_window = tk.Tk()
     main_window.geometry("600x400")
-    main_window.title("little tools 1.5")
+    main_window.title("little tools 1.6")
 
     def handle_random_numbers():
         random_numbers_window = tk.Toplevel(main_window)
