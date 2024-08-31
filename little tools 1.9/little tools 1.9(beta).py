@@ -160,7 +160,7 @@ def main():
 
     main_window = tk.Tk()
     main_window.geometry("600x400")
-    main_window.title("little tools 1.9")
+    main_window.title("little tools 1.9(beta)")
 
     def gui_random_numbers():
         random_numbers_window = tk.Toplevel(main_window)
@@ -377,7 +377,7 @@ def main():
         update_time()
 
     def gui_new_edition():
-        messagebox.showinfo("新版本介绍", "版本号:1.9 更新内容:时间功能将优先使用在线时间API\n若失败则使用本地时间")
+        messagebox.showinfo("新版本介绍", "版本号:1.9(beta) 更新内容:时间功能将优先使用在线时间API\n若失败则使用本地时间\n此版本为测试版本，可能出现包括但不限于卡顿，软件崩溃等情况\n若您发现任何问题，欢迎向我们发送电子邮件")
 
     def exit():
         main_window.destroy()
