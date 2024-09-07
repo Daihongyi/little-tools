@@ -70,6 +70,7 @@ def tools_mp3_player():
     player_main_window = tk.Tk()
     player_main_window.geometry("400x150")
     player_main_window.title("Audio player")
+
     music_file = None
     is_paused = False
     mp3_file_name = None
@@ -114,22 +115,22 @@ def tools_mp3_player():
         player_main_window.destroy()
 
     # 创建播放按钮
-    play_button = tk.Button(player_main_window, text="播放", command=play_music)
+    play_button = tk.Button(player_main_window, text="播放", command=play_music,activeforeground="blue",relief ="groove")
     play_button.place(x=25, y=100)
 
     # 创建暂停/继续按钮
-    pause_resume_button = tk.Button(player_main_window, text="暂停", command=pause_resume_music)
+    pause_resume_button = tk.Button(player_main_window, text="暂停", command=pause_resume_music,activeforeground="blue",relief ="groove")
     pause_resume_button.place(x=75, y=100)
 
     # 创建停止按钮
-    stop_button = tk.Button(player_main_window, text="停止", command=stop_music)
+    stop_button = tk.Button(player_main_window, text="停止", command=stop_music,activeforeground="blue",relief ="groove")
     stop_button.place(x=125, y=100)
 
     # 创建选择文件按钮
-    choose_file_button = tk.Button(player_main_window, text="选择文件", command=choose_file)
+    choose_file_button = tk.Button(player_main_window, text="选择文件", command=choose_file,activeforeground="blue",relief ="groove")
     choose_file_button.place(x=175, y=100)
 
-    exit_player_button = tk.Button(player_main_window, text="退出", command=exit_player)
+    exit_player_button = tk.Button(player_main_window, text="退出", command=exit_player,activeforeground="blue",relief ="groove")
     exit_player_button.place(x=250, y=100)
 
     player_main_window.mainloop()
@@ -160,12 +161,18 @@ def main():
 
     main_window = tk.Tk()
     main_window.geometry("600x400")
-    main_window.title("little tools 1.9(beta)")
+    main_window.title("little tools 1.9")
+
+
+
+
+
 
     def gui_random_numbers():
         random_numbers_window = tk.Toplevel(main_window)
         random_numbers_window.title("随机数生成")
         random_numbers_window.geometry("300x225")
+
         least_val_entry = tk.Entry(random_numbers_window)
         max_val_entry = tk.Entry(random_numbers_window)
         count_entry = tk.Entry(random_numbers_window)
@@ -175,7 +182,7 @@ def main():
         count_label = tk.Label(random_numbers_window, text="数量")
         remake_label = tk.Label(random_numbers_window, text="允许重复(y/n)")
         random_numbers_label = tk.Label(random_numbers_window, text="生成的随机数为：", fg=random.choice(color_list))
-        exit_button = tk.Button(random_numbers_window, text="退出", command=random_numbers_window.destroy)
+        exit_button = tk.Button(random_numbers_window, text="退出", command=random_numbers_window.destroy,activeforeground="blue",relief ="groove")
         least_val_entry.place(x=80, y=20)
         max_val_entry.place(x=80, y=50)
         count_entry.place(x=80, y=80)
@@ -216,7 +223,7 @@ def main():
                 random_numbers = tools_randint(least_val, max_val, count, False)
                 random_numbers_label.config(text="生成的随机数为：\n" + add_line_break(random_numbers, 8))
 
-        make_button = tk.Button(random_numbers_window, text="生成", command=get_random_numbers)
+        make_button = tk.Button(random_numbers_window, text="生成", command=get_random_numbers,activeforeground="blue",relief ="groove")
         make_button.place(x=250, y=20)
         random_numbers_window.mainloop()
 
@@ -224,13 +231,14 @@ def main():
         prime_number_window = tk.Toplevel(main_window)
         prime_number_window.title("质数判断器")
         prime_number_window.geometry("300x225")
+
         number_entry = tk.Entry(prime_number_window)
         number_text = tk.Label(prime_number_window, text="请输入需要判断的数")
         result_type_label = tk.Label(prime_number_window, text="是否为质数：")
         factor_count_label = tk.Label(prime_number_window, text="因数个数：")
         factors_label = tk.Label(prime_number_window, text="因数列表：")
         factors_label['justify'] = 'left'
-        exit_button = tk.Button(prime_number_window, text="退出", command = prime_number_window.destroy)
+        exit_button = tk.Button(prime_number_window, text="退出", command = prime_number_window.destroy,activeforeground="blue",relief ="groove")
         number_entry.place(x=140, y=20)
         number_text.place(x=10, y=20)
         result_type_label.place(x=10, y=60)
@@ -259,15 +267,15 @@ def main():
                     factor_count_label.config(text="因数个数：" + str(factor_count))
                     factors_label.config(text="因数列表：\n" + add_line_break(factors, 8))
 
-        prime_number_button = tk.Button(prime_number_window, text="判断", command=get_prime_number)
+        prime_number_button = tk.Button(prime_number_window, text="判断", command=get_prime_number,activeforeground="blue",relief ="groove")
         prime_number_button.place(x=250, y=50)
         prime_number_window.mainloop()
 
     def gui_encipher():
-        tk.messagebox.showwarning("严重警告", "密钥需为16, 24, 或32个字符")
         encipher_window = tk.Toplevel(main_window)
         encipher_window.title("文本加密")
         encipher_window.geometry("300x225")
+
         text_entry = tk.Entry(encipher_window, width=50)
         text_label = tk.Label(encipher_window, text="文本")
         key_entry = tk.Entry(encipher_window, width=50, show='*')
@@ -291,8 +299,8 @@ def main():
             except Exception as e:
                 messagebox.showerror("错误", f"加密失败: {e}")
 
-        encrypt_button = tk.Button(encipher_window, text="加密", command=get_encrypted_text)
-        exit_button = tk.Button(encipher_window, text="退出", command=encipher_window.destroy)
+        encrypt_button = tk.Button(encipher_window, text="加密", command=get_encrypted_text,activeforeground="blue",relief ="groove")
+        exit_button = tk.Button(encipher_window, text="退出", command=encipher_window.destroy,activeforeground="blue",relief ="groove")
 
         text_entry.place(x=50, y=20, width=175)
         key_entry.place(x=50, y=60, width=175)
@@ -304,10 +312,10 @@ def main():
         exit_button.place(x=250, y=175)
 
     def gui_decrypt():
-        tk.messagebox.showwarning("严重警告", "密钥需为16, 24, 或32个字符")
         decrypt_window = tk.Toplevel(main_window)
         decrypt_window.title("文本解密")
         decrypt_window.geometry("300x225")
+
         encipher_text_entry = tk.Entry(decrypt_window, width=50)
         encipher_text_label = tk.Label(decrypt_window, text="密文")
         secret_key_warning_label = tk.Label(decrypt_window, text="密钥需为16, 24, 或32个字符", fg="red")
@@ -330,8 +338,8 @@ def main():
             except Exception as e:
                 messagebox.showerror("错误", f"解密失败: {e}")
 
-        decrypt_button = tk.Button(decrypt_window, text="解密", command=get_decrypted_text)
-        exit_button = tk.Button(decrypt_window, text="退出", command=decrypt_window.destroy)
+        decrypt_button = tk.Button(decrypt_window, text="解密", command=get_decrypted_text,activeforeground="blue",relief ="groove")
+        exit_button = tk.Button(decrypt_window, text="退出", command=decrypt_window.destroy,activeforeground="blue",relief ="groove")
 
         encipher_text_entry.place(x=50, y=20, width=175)
         secret_key_entry.place(x=50, y=60, width=175)
@@ -377,33 +385,33 @@ def main():
         update_time()
 
     def gui_new_edition():
-        messagebox.showinfo("新版本介绍", "版本号:1.9(beta) 更新内容:时间功能将优先使用在线时间API\n若失败则使用本地时间\n此版本为测试版本，可能出现包括但不限于卡顿，软件崩溃等情况\n若您发现任何问题，欢迎向我们发送电子邮件")
+        messagebox.showinfo("新版本介绍", "版本号:1.9 更新内容:时间功能将优先使用在线时间API\n若失败则使用本地时间\nGUI调整")
 
     def exit():
         main_window.destroy()
 
-    button_randint = tk.Button(main_window, text="随机数生成", command=gui_random_numbers)
+    button_randint = tk.Button(main_window, text="随机数生成", command=gui_random_numbers,activeforeground="blue",relief ="groove")
     button_randint.place(x=25, y=25)
 
-    button_prime_number = tk.Button(main_window, text="质数判断", command=gui_prime_number)
+    button_prime_number = tk.Button(main_window, text="质数判断", command=gui_prime_number,activeforeground="blue",relief ="groove")
     button_prime_number.place(x=100, y=25)
 
-    button_encipher = tk.Button(main_window, text="加密文本", command=gui_encipher)
+    button_encipher = tk.Button(main_window, text="加密文本", command=gui_encipher,activeforeground="blue",relief ="groove")
     button_encipher.place(x=25, y=75)
 
-    button_decrypt = tk.Button(main_window, text="解密文本", command=gui_decrypt)
+    button_decrypt = tk.Button(main_window, text="解密文本", command=gui_decrypt,activeforeground="blue",relief ="groove")
     button_decrypt.place(x=100, y=75)
 
-    button_time = tk.Button(main_window, text="查看时间", command=gui_now_time)
+    button_time = tk.Button(main_window, text="查看时间", command=gui_now_time,activeforeground="blue",relief ="groove")
     button_time.place(x=175, y=25)
 
-    button_mp3_player = tk.Button(main_window, text="音乐播放", command=tools_mp3_player)
+    button_mp3_player = tk.Button(main_window, text="音乐播放", command=tools_mp3_player,activeforeground="blue",relief ="groove")
     button_mp3_player.place(x=175, y=75)
 
-    button_new_edition = tk.Button(main_window, text="新版本介绍", command=gui_new_edition)
+    button_new_edition = tk.Button(main_window, text="新版本介绍", command=gui_new_edition,activeforeground="blue",relief ="groove")
     button_new_edition.place(x=450, y=350)
 
-    button_exit = tk.Button(main_window, text="退出", command=exit)
+    button_exit = tk.Button(main_window, text="退出", command=exit,activeforeground="blue",relief ="groove")
     button_exit.place(x=550, y=350)
 
     about1 = tk.Label(main_window, text="本产品由北极星工作室——DHY荣誉出品", fg="blue")
